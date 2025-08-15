@@ -3,7 +3,12 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Замените на master, если это ваша основная ветка
+      - main
+
+permissions: # Добавляем этот блок
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
@@ -18,7 +23,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './site' # Укажите здесь папку, где находятся ваши HTML-файлы
+          path: './site'
 
       - name: Deploy to GitHub Pages
         id: deployment
