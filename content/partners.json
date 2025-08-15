@@ -1,0 +1,22 @@
+[
+  {
+    "name": "ПАО «КАМАЗ»",
+    "logo": "KAMAZ_Logo.svg"
+  },
+  {
+    "name": "ПАО «КВЗ»",
+    "logo": "kvz.png"
+  },
+  {
+    "name": "ПАО «Туполев» (КАЗ им. С.П. Горбунова)",
+    "logo": "kaz.png"
+  },
+  {
+    "name": "ICL",
+    "logo": "icl.svg"
+  },
+  {
+    "name": "1С",
+    "logo": "1c.svg"
+  }
+]

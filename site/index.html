@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Кафедра динамики процессов и управления — КНИТУ‑КАИ</title>
+  <meta name="description" content="Официальный сайт кафедры динамики процессов и управления (ИКТЗИ, КНИТУ‑КАИ). Программы, наука, сотрудники, новости, контакты."/>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+<body>
+<a class="skip-link" href="#main">К содержанию</a>
+<div id="header"></div>
+
+<main id="main" class="container">
+  <section class="hero">
+    <h1>Кафедра динамики процессов и управления</h1>
+    <p class="lead">Институт компьютерных технологий и защиты информации (ИКТЗИ), КНИТУ‑КАИ им. А. Н. Туполева</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="applicants.html">Абитуриентам</a>
+      <a class="btn btn-outline" href="programs.html">Направления подготовки</a>
+    </div>
+  </section>
+
+  <section class="kpi-grid">
+    <article class="kpi"><div class="kpi-num">1967</div><div class="kpi-text">год основания</div></article>
+    <article class="kpi"><div class="kpi-num">2</div><div class="kpi-text">образовательные программы</div></article>
+    <article class="kpi"><div class="kpi-num">15+</div><div class="kpi-text">партнёров‑работодателей</div></article>
+    <article class="kpi"><div class="kpi-num">1000+</div><div class="kpi-text">выпускников</div></article>
+  </section>
+
+  <section>
+    <h2>Новости</h2>
+    <div id="news-list" class="card-grid"></div>
+    <div class="more"><a class="btn btn-link" href="news.html">Все новости →</a></div>
+  </section>
+
+  <section class="logos">
+    <h2>Партнёры</h2>
+    <div id="partners-logos" class="logo-grid"></div>
+    <div class="more"><a class="btn btn-link" href="careers.html">Практика и карьера →</a></div>
+  </section>
+</main>
+
+<div id="footer"></div>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/news.js"></script>
+<script>
+  fetch('../content/partners.json').then(r=>r.json()).then(data=>{
+    const wrap = document.getElementById('partners-logos');
+    (data.slice(0,8)).forEach(p=>{
+      const div = document.createElement('div');
+      div.className="logo-card";
+      div.innerHTML = `<img src="assets/img/logos/${p.logo}" alt="${p.name} логотип">`;
+      wrap.appendChild(div);
+    });
+  });
+</script>
+</body>
+</html>

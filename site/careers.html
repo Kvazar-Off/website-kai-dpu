@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Практика и будущая карьера — ДПУ КНИТУ‑КАИ</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+<body>
+<div id="header"></div>
+<main class="container">
+  <h1>Практика и будущая карьера</h1>
+  <p>Мы сотрудничаем с ведущими IT-компаниями, где наши студенты проходят практику и строят успешную карьеру после выпуска.</p>
+  <h2>Партнёры</h2>
+  <div id="partners" class="logo-grid"></div>
+</main>
+<div id="footer"></div>
+<script src="assets/js/main.js"></script>
+<script>
+  fetch('../content/partners.json').then(r=>r.json()).then(rows=>{
+    const wrap=document.getElementById('partners');
+    rows.forEach(p=>{
+      const div = document.createElement('div');
+      div.className="logo-card";
+      div.innerHTML = `<img src="assets/img/logos/${p.logo}" alt="${p.name} логотип">`;
+      wrap.appendChild(div);
+    });
+  });
+</script>
+</body>
+</html>
